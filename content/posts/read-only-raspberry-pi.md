@@ -33,14 +33,14 @@ astboot noswap ro
 sudo apt-get install busybox-syslogd
 sudo apt-get remove --purge rsyslog
 ```
-Maintenant pour lire les log system ```sudo logread```
+Maintenant pour lire les log system **sudo logread**
 
 
 ## Système de fichier en lecture seule
-Ajouter ro au système de fichier por ```/``` et ```/boot``` dans ```/etc/fstab```
+Ajouter ro au système de fichier por **/** et **/boot** dans **/etc/fstab**
 
 ## Systène de fichier temporaire
-Ajouter ces lignes dans ```/etc/fstab```
+Ajouter ces lignes dans **/etc/fstab**
 ```
 tmpfs        /tmp            tmpfs   nosuid,nodev         0       0
 tmpfs        /var/log        tmpfs   nosuid,nodev         0       0
