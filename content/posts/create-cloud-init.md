@@ -22,7 +22,7 @@ wget https://cloud.debian.org/images/cloud/bookworm/20230711-1438/debian-12-gene
 
 ```
 sudo mkdir /mnt/cloud-disk
-sudo qemu-nbd --connect=/dev/nbd0 debian-12-nocloud-amd64-20230711-1438.qcow2
+sudo qemu-nbd --connect=/dev/nbd0 debian-12-genericcloud-amd64-20230711-1438.qcow2
 sudo mount /dev/nbd0p1 /mnt/cloud-disk
 ```
 
