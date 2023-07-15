@@ -25,7 +25,7 @@ sudo apt-get autoremove --purge
 Dans /boot/cmdline.txt ajouter ceci à la fin de la ligne
 
 ```
-astboot noswap ro
+fastboot noswap ro
 ```
 
 ## Log manager
