@@ -49,16 +49,14 @@ tmpfs        /var/tmp        tmpfs   nosuid,nodev         0       0
 
 ### Symlink ver /tmp
 ```
-sudo rm -rf /var/lib/dhcp /var/lib/dhcpcd5 /var/spool /etc/resolv.conf
+sudo rm -rf /var/lib/dhcp /var/lib/dhcpcd5 /var/spool /etc/resolv.conf /var/lib/systemd/random-seed
+
+sudo touch /tmp/dhcpcd.resolv.conf
+
 sudo ln -s /tmp /var/lib/dhcp
 sudo ln -s /tmp /var/lib/dhcpcd5
 sudo ln -s /tmp /var/spool
-sudo touch /tmp/dhcpcd.resolv.conf
 sudo ln -s /tmp/dhcpcd.resolv.conf /etc/resolv.conf
-```
-
-```
-sudo rm /var/lib/systemd/random-seed
 sudo ln -s /tmp/random-seed /var/lib/systemd/random-seed
 ```
 
