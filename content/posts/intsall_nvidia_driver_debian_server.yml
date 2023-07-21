@@ -16,7 +16,7 @@ sudo ./NVIDIA-Linux-x86_64-$DRIVER_VERSION.run --ui=none
 
 
 
-https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/1.13.5/install-guide.html#install-guide
+https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/1.13.5/install-guide.html#docker
 
 ## Docker
 ```
