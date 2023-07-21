@@ -1,0 +1,15 @@
+---
+title: "Installer les pilotes NVIDIA sur debian server"
+date: 2023-07-21T22:36:07-04:00
+draft: true
+---
+
+sudo apt-get install linux-headers-$(uname -r)
+sudo apt install build-essential
+
+BASE_URL=https://us.download.nvidia.com/tesla
+DRIVER_VERSION=535.86.05
+wget $BASE_URL/$DRIVER_VERSION/NVIDIA-Linux-x86_64-$DRIVER_VERSION.run
+
+sudo chmod +x NVIDIA-Linux-x86_64-$DRIVER_VERSION.run
+sudo ./NVIDIA-Linux-x86_64-$DRIVER_VERSION.run --ui=none
