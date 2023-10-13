@@ -9,35 +9,34 @@ URL où télécharger l'image de base pour debian:
 [https://cloud.debian.org/images/cloud](https://cloud.debian.org/images/cloud)
 
 ## Préparation
-### Installer les package nécessaires pour monter l'image qcow2
-```
-sudo apt install qemu-utils
-sudo modprobe nbd max_part=8
-```
-
 ### Téléchargez l'image que vous voulez modifier en format qcow2
 Dans mon cas la version à jour de debian est la 12
 ```
 wget https://cloud.debian.org/images/cloud/bookworm/20230711-1438/debian-12-genericcloud-amd64-20230711-1438.qcow2
 ```
 
-### Monter l'image (Optionel)
+## Monter l'image (Optionel)
+### Installer les package nécessaires pour monter l'image qcow2
+```
+sudo apt install qemu-utils
+sudo modprobe nbd max_part=8
+```
 ```
 sudo mkdir /mnt/cloud-disk
 sudo qemu-nbd --connect=/dev/nbd0 debian-12-genericcloud-amd64-20230711-1438.qcow2
 sudo mount /dev/nbd0p1 /mnt/cloud-disk
 ```
 
-#### Modifier l'image
+### Modifier l'image
 
-#### Démonter l'image
+### Démonter l'image
 ```
 sudo umount /mnt/cloud-disk
 sudo qemu-nbd --disconnect /dev/nbd0
 sudo rmmod nbd
 ```
 
-### Imorter l'image dans un template
+## Création du template
 ```
 qm destroy 900 --destroy-unreferenced-disks --purge
 qm create 900 --memory 2048 --net0 virtio,bridge=vmbr1 --scsihw virtio-scsi-pci --name debian-12-slythe
