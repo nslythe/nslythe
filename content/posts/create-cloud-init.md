@@ -48,7 +48,7 @@ qm set 900 --ide2 local-lvm:cloudinit --boot c --bootdisk scsi0 --serial0 socket
 qm template 900
 ````
 
-##Cloner le template
+## Cloner le template
 ````
 qm clone 900 901 --name test-00
 
