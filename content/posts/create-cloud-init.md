@@ -1,5 +1,5 @@
 ---
-title: "Créer un image cloud-init debian"
+title: "Créer une image cloud-init debian"
 date: 2023-07-12T22:36:07-04:00
 draft: false
 ---
