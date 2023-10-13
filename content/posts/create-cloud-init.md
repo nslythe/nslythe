@@ -9,8 +9,10 @@ URL où télécharger l'image de base pour debian:
 [https://cloud.debian.org/images/cloud](https://cloud.debian.org/images/cloud)
 
 ## Préparation
-### Téléchargez l'image que vous voulez modifier en format qcow2
-Dans mon cas la version à jour de debian est la 12
+### Téléchargez l'image cloud-init
+Pour l'utilisation de l'image avec proxmox elle doit être en format qcow2
+Vous devez aussi télécharger la version genericcloud
+Dans mon cas la version à jour de debian est la 12(bookworm)
 ```
 wget https://cloud.debian.org/images/cloud/bookworm/20230711-1438/debian-12-genericcloud-amd64-20230711-1438.qcow2
 ```
