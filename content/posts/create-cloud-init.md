@@ -49,7 +49,7 @@ qm template 900
 ````
 
 ## Cloner le template
-````
+```
 qm clone 900 901 --name test-00
 
 qm resize 901 scsi0 30G
@@ -61,5 +61,4 @@ qm set 901 --sshkey ~/.ssh/id_rsa.pub
 #qm set 901 --cipassword AweSomePassword
 
 qm cloudinit dump 901 user
-
 ```
