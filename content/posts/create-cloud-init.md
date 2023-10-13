@@ -10,9 +10,7 @@ URL où télécharger l'image de base pour debian:
 
 ## Préparation
 ### Téléchargez l'image cloud-init
-Pour l'utilisation de l'image avec proxmox elle doit être en format qcow2
-Vous devez aussi télécharger la version genericcloud
-Dans mon cas la version à jour de debian est la 12(bookworm)
+Pour l'utilisation de l'image avec proxmox elle doit être en format qcow2. Vous devez télécharger la version genericcloud, elle sera moin volumineuse elle ne contient pas les driver pour une installation "bare metal". Dans mon cas la version à jour de debian est la 12(bookworm).
 ```
 wget https://cloud.debian.org/images/cloud/bookworm/20230711-1438/debian-12-genericcloud-amd64-20230711-1438.qcow2
 ```
