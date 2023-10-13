@@ -21,33 +21,33 @@ Dans mon cas la version à jour de debian est la 12
 wget https://cloud.debian.org/images/cloud/bookworm/20230711-1438/debian-12-genericcloud-amd64-20230711-1438.qcow2
 ```
 
-### Monter l'image
+### Monter l'image (Optionel)
 ```
 sudo mkdir /mnt/cloud-disk
 sudo qemu-nbd --connect=/dev/nbd0 debian-12-genericcloud-amd64-20230711-1438.qcow2
 sudo mount /dev/nbd0p1 /mnt/cloud-disk
 ```
 
-### Modifier l'image
+#### Modifier l'image
 
-### Démonter l'image
+#### Démonter l'image
 ```
 sudo umount /mnt/cloud-disk
 sudo qemu-nbd --disconnect /dev/nbd0
 sudo rmmod nbd
 ```
 
-
-Sur votre serveur Proxmox
+### Imorter l'image dans un template
 ```
 qm destroy 900 --destroy-unreferenced-disks --purge
 qm create 900 --memory 2048 --net0 virtio,bridge=vmbr1 --scsihw virtio-scsi-pci --name debian-12-slythe
 qm importdisk 900 debian-12-slythe-amd64-20230711-1438.qcow2  local-lvm -format qcow2
 qm set 900 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-900-disk-0
 qm set 900 --ide2 local-lvm:cloudinit --boot c --bootdisk scsi0 --serial0 socket --vga serial0
-
-
 qm template 900
+````
+
+````
 qm clone 900 901 --name test-00
 
 qm resize 901 scsi0 30G
