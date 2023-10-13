@@ -9,7 +9,7 @@ URL où télécharger l'image de base pour debian:
 [https://cloud.debian.org/images/cloud](https://cloud.debian.org/images/cloud)
 
 ## Préparation
-### Installer les package nécessaires pour mounter l'image qcow2
+### Installer les package nécessaires pour monter l'image qcow2
 ```
 sudo apt install qemu-utils
 sudo modprobe nbd max_part=8
