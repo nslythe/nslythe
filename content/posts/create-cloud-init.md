@@ -21,6 +21,8 @@ wget https://cloud.debian.org/images/cloud/bookworm/20230711-1438/debian-12-gene
 sudo apt install qemu-utils
 sudo modprobe nbd max_part=8
 ```
+
+### Monter l'image
 ```
 sudo mkdir /mnt/cloud-disk
 sudo qemu-nbd --connect=/dev/nbd0 debian-12-genericcloud-amd64-20230711-1438.qcow2
@@ -46,6 +48,7 @@ qm set 900 --ide2 local-lvm:cloudinit --boot c --bootdisk scsi0 --serial0 socket
 qm template 900
 ````
 
+##Cloner le template
 ````
 qm clone 900 901 --name test-00
 
